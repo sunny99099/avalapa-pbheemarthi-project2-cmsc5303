@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lesson6/controller/auth_controller.dart';
 import 'package:lesson6/controller/home_controller.dart';
+import 'package:lesson6/model/home_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,20 +14,22 @@ class HomeScreen extends StatefulWidget {
 
 class HomeState extends State<HomeScreen> {
   late HomeController con;
-  
+  late HomeModel model;
+
   @override
   void initState() {
     super.initState();
     con = HomeController(this);
-
+    model = HomeModel(currentUser!);
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Home"),
+        title: const Text('Home'),
       ),
-      body: const Text("home"),
+      body: PopScope(canPop: false, child: Text(model.user.email!)),
       drawer: drawerView(context),
     );
   }
@@ -33,15 +37,15 @@ class HomeState extends State<HomeScreen> {
   Widget drawerView(BuildContext context) {
     return Drawer(
       child: ListView(
-        children:[
+        children: [
           UserAccountsDrawerHeader(
-            accountName: Text("no prof"),
-            accountEmail: Text("email"),
+            accountName: const Text('No profile'),
+            accountEmail: Text(model.user.email!),
           ),
           ListTile(
             leading: const Icon(Icons.logout),
-            title: const Text("Sigh out"),
-            onTap: con.sighOut,
+            title: const Text('Sign Out'),
+            onTap: con.signOut,
           )
         ],
       ),

@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:lesson6/view/startdispsctch.dart';
+import 'package:lesson6/view/createaccount_screen.dart';
+import 'package:lesson6/view/startdispatcher.dart';
 import 'firebase_options.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
-  options: DefaultFirebaseOptions.currentPlatform,
-);
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const FirebaseTemplateApp());
 }
-class FirebaseTemplateApp extends StatelessWidget{
+
+class FirebaseTemplateApp extends StatelessWidget {
   const FirebaseTemplateApp({super.key});
 
   @override
@@ -20,11 +22,11 @@ class FirebaseTemplateApp extends StatelessWidget{
         useMaterial3: true,
         colorSchemeSeed: Colors.blue,
       ),
-      initialRoute: Startdispsctch.routeName,
+      initialRoute: StartDispatcher.routeName,
       routes: {
-        Startdispsctch.routeName:(context) => const Startdispsctch(),
+        StartDispatcher.routeName: (context) => const StartDispatcher(),
+        CreateAccountScreen.routeName: (context) => const CreateAccountScreen(),
       },
     );
   }
-
 }
