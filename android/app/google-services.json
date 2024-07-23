@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:882101087223:android:3b8886cdd3163b4486dcf2",
+        "android_client_info": {
+          "package_name": "edu.uco.adithya.cmsc5303.lesson6"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAQ2F6EKiTMmyvr9RUiM_qgLf4Cyzx-WE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:882101087223:android:a81cd64c697f9b1386dcf2",
         "android_client_info": {
           "package_name": "edu.uco.avalapa.cmsc5303.lesson6"

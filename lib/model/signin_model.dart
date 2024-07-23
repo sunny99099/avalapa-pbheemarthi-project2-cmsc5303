@@ -1,39 +1,33 @@
-class  SignInModel {
+class SignInModel {
   String? email;
   String? password;
   bool inProgress = false;
 
-  String? validateEmail(String? value){
-    if(value == null || value.isEmpty){
+  String? validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
       return 'No email provided';
-    }
-    else if (!(value.contains('@') && value.contains('.'))){
-      return 'Invalid Email Address';
-    }
-    else {
+    } else if (!(value.contains('@') && value.contains('.'))) {
+      return 'Invalid email address';
+    } else {
       return null;
     }
   }
 
-  String? validatePassword(String? value){
-    if(value == null || value.isEmpty){
-      return 'No Password Provided';
-    }
-    else if (value.length < 6){
-      return 'Min chars is 6';
-    }
-    else {
+  String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'No password provided';
+    } else if (value.length < 6) {
+      return 'Min char is 6';
+    } else {
       return null;
     }
   }
 
-  void saveEmail(String? value){
+  void saveEmail(String? value) {
     if (value != null) email = value;
   }
 
-  void savePassword(String? value){
+  void savePassword(String? value) {
     if (value != null) password = value;
   }
-
-
 }

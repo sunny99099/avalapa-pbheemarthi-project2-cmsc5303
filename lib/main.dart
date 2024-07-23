@@ -6,6 +6,7 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -16,15 +17,15 @@ class FirebaseTemplateApp extends StatelessWidget {
   const FirebaseTemplateApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(Object context) {
     return MaterialApp(
       theme: ThemeData(
         useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
+        colorSchemeSeed: Colors.blue[250],
       ),
-      initialRoute: StartDispatcher.routeName,
+      initialRoute: Startdispatcher.routeName,
       routes: {
-        StartDispatcher.routeName: (context) => const StartDispatcher(),
+        Startdispatcher.routeName: (context) => const Startdispatcher(),
         CreateAccountScreen.routeName: (context) => const CreateAccountScreen(),
       },
     );
