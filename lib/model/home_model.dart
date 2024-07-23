@@ -9,7 +9,7 @@ class HomeModel {
   String? validatety(String? value) {
     if (value == null || value.isEmpty) {
       return 'No password provided';
-    } else if (value.length < 3) {
+    } else if (value.length < 2) {
       return 'Min char is 2';
     } else {
       return null;

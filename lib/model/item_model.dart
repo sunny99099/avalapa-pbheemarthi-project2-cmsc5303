@@ -38,6 +38,6 @@ class Item {
   }
 
   static String? validatety(String? value) {
-    return value == null || value.trim().length < 2 ? 'Title too short' : null;
+    return value == null || value.trim().length < 3 ? 'Title too short' : null;
   }
 }
