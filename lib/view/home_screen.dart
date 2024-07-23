@@ -134,7 +134,7 @@ class HomeState extends State<HomeScreen> {
                         validator: (value) {
                           if (value == null ||
                               value.isEmpty ||
-                              value.length < 2) {
+                              value.length < 3) {
                             return 'Name too short';
                           }
                           return null;
